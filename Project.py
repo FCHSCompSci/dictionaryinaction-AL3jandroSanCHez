@@ -26,14 +26,62 @@ movie_rent={
 
 
 
+def sum_movies(movies):
+    return sum(movies)
+    
+
+def buy_movie(movies):
+    account= money - sum(movies)
+    return account
+money_movies=[]
+
+while True:
+    movies_question= input("Do you want to [b]uy, or [r]ent a movie?")
+
+
+    if movies_question.strip() == "b":
+        movie_mine = movie_store
+    
+        for k,v in movie_store.items():
+            print(k,": $",v)
+        break
+        
+    elif movies_question.strip() == "r":
+        movie_mine = movie_rent
+    
+        for k,v in movie_rent.items():
+            print(k,": $",v)
+        break
+       
+    else:
+        print("That is not valid input!")
+    
 money = float(input("How much money do you have?"))
-movies_question= input("Do you want to [b]uy, or [r]ent a movie? If you want to exit, press x.")
-if movies_question.strip() == "b":
-    for k,v in movie_store.items():
-        print(k,":",v)
-    while True:
-        movies_bought= input("What movie do you want to buy? If you want to stop buying movies, press s.")
-        if movies_bought.strip()== "s":
-             break
+
+
+while True:
+       
+    movies_bought=input("Type one movie you want to buy or rent; if you finished to choose all the movies you want, press [s] to stop buying movies and get your receive.")
     
-    
+    if movies_bought != "s":
+        money_movies.append(movie_mine[movies_bought.title().strip()])
+    else:
+        print("Your receive is $%s, and you have now $%s." %(sum_movies(money_movies), buy_movie(money_movies)))
+        break
+
+
+
+
+
+
+
+# Ask user for movies they want to buy AND if they want to stop buying movies, type X
+# Everytime the user enters a movie, append movie to a list.
+# inside your function then use list, to loop over, and get dictionary values as you loop through the list of movies
+
+
+
+
+
+
+
