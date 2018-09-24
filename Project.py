@@ -61,12 +61,13 @@ money = float(input("How much money do you have?"))
 
 while True:
        
-    movies_bought=input("Type one movie you want to buy or rent; if you finished to choose all the movies you want, press [s] to stop buying movies and get your receive.")
+    movies_bought=input("Type one movie you want to buy or rent, press [s] to stop buying movies and get your receive.")
+    
     
     if movies_bought != "s":
         money_movies.append(movie_mine[movies_bought.title().strip()])
     else:
-        print("Your receive is $%s, and you have now $%s." %(sum_movies(money_movies), buy_movie(money_movies)))
+        print("Your receive is $%.2f, and you have now $%.2f." %(sum_movies(money_movies), buy_movie(money_movies)))
         break
 
 
